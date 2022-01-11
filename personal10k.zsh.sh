@@ -41,6 +41,19 @@ zsh
 rm -f .p10k.zsh
 cp $ruta/.p10k.zsh_root /root/.p10k.zsh
 
+#Enlace simbolico del .zshrc
+ln -s -f /home/$usuario/.zshrc /root/.zshrc
+
+#Arreglar problema de permisos
+chown $usuario:$usuario /root
+chown $usuario:$usuario /root/.cache -R
+chown $usuario:$usuario /root/.local -R
+
+#Estableciendo zsh como shell predeterminada
+usermod --shell /usr/bin/zsh $usuario
+usermod --shell /usr/bin/zsh root
+
+#Saliendo
 clear
 echo -e "${amarillo}Se a completado la configuracion${fin}"
 slepp 1
