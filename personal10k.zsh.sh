@@ -28,7 +28,6 @@ cp $ruta/.p10k.zsh_user /home/$usuario/.p10k.zsh
 
 
 #instalar powerlevel10k en la ruta root
-sudo su
 cd /root/
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
@@ -56,7 +55,7 @@ usermod --shell /usr/bin/zsh root
 #Saliendo
 clear
 echo -e "${amarillo}Se a completado la configuracion${fin}"
-slepp 1
+slep 1
 echo -e "${amarillo}Reinicie la terminal${fin}"
 exit
 
