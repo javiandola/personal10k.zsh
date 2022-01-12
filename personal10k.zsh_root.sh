@@ -2,6 +2,7 @@
 
 path=$(readlink -e $0)
 ruta=$(dirname $path)
+usuario=${SUDO_USER:-$USER}
 
 #instalar powerlevel10k en la ruta root
 cd /root/
