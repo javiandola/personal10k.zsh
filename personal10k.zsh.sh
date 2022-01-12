@@ -10,7 +10,8 @@ turquesa="\e[0;36m\033[1m"
 gris="\e[0;37m\033[1m"
 fin="\033[0m\e[0m"
 
-ruta=$(pwd)
+path=$(readlink -e $0)
+ruta=$(dirname $path)
 
 #instalar powerlevel10k en la ruta del usuario
 usuario=$(whoami)
@@ -28,8 +29,4 @@ cp $ruta/.p10k.zsh_user /home/$usuario/.p10k.zsh
 
 
 #instalar powerlevel10k en la ruta root
-path=$(readlink -e $0)
-ruta=$(dirname $path)
-
 sudo bash $ruta/personal10k.zsh_root.sh
-
